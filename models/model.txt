@@ -1,0 +1,5 @@
+#Model
+
+Models are objects that represent the data 
+that will be saved or is saved on the database.
+

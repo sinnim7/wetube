@@ -1,0 +1,78 @@
+# npm
+npm은 package를 설치하는 거임.
+node_modules 폴더 처럼 말이지. 하지만
+때때로 그냥 패키지를 내 컴퓨터의 아무데서나 사용하고 
+싶을 수도 있음.
+만일 내가 ESLint를 global하게 설치했다면 모든 프로젝트에서
+사용 가능. 같은 파일의 복사본을 계속 설치할 필요 없음.
+
+
+#####주의####
+절대 전역으로 설치말자..오류..ㅠ
+
+npm install eslint -g
+'-g'는 해당 package를 global하게 설치한다는 얘기.
+
+그냥 
+npm install eslint로 가자.
+설치한 후 
+eslint --init 이렇게 입력.
+그럼
+FYI _ How I install ESLint at Windows 10 (from https://eslint.org/docs/user-guide/getting-started ) below: 
+
+(1) C:\Users\a\Documents\wetube>node node_modules\eslint\bin\eslint.js
+(2) C:\Users\a\Documents\wetube>node node_modules\eslint\bin\eslint.js --init
+
+? How would you like to use ESLint? 
+To check syntax, find problems, and enforce code style
+? What type of modules does your project use? 
+JavaScript modules (import/export)
+? Which framework does your project use? 
+None of these
+? Where does your code run? (Press  to select,  to toggle all,  to invert selection)
+Browser
+? How would you like to define a style for your project? 
+Use a popular style guide
+? Which style guide do you want to follow? 
+Airbnb (https://github.com/airbnb/javascript)
+? What format do you want your config file to be in? 
+JavaScript
+? Would you like to install them now with npm? 
+Yes
+
+그 다음에는, VSCode (혹은 다른 에디터에서) ESLint 확장프로그램을 설치하세요
+
+그 담에 .eslintrc.js로 가서 
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+    node: true
+  },
+  extends: "airbnb-base",
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module"
+  },
+  rules: {}
+};
+
+이렇게 그대로 붙이고.
+npm install eslint-config-prettier
+
+하고
+
+그 담에 
+.eslintrc.js 로 가서
+
+extends: ["airbnb-base", "plugin:prettier/recommended"],
+이분에 이렇게 함.
+그리고 js 파일암데나가서 저장누르면 바뀜. 
+
+
+
+

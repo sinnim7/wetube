@@ -13,6 +13,8 @@ import globalRouter from "./routers/globalRouter";
 const app = express(); //express를 실행한 결과를 상수 app으로 만듦.
 
 app.set("view engine", "pug"); // view engine 설정값을 pug로 바꿈
+app.use("/uploads", express.static("uploads")); // directory에서 file을 보내주는 미들웨어임.
+app.use("/static", express.static("static"));
 
 //middleware 추가.
 app.use(helmet()); // application 보완을 도와줌.
