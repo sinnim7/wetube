@@ -6,11 +6,26 @@ const multerVideo = multer({ dest: "uploads/videos/" });
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
-  res.locals.user = {
-    isAuthenticated: false,
-    id: 1
-  };
+  res.locals.user = req.user || null; // user가 존재하거나 아니면 존재하지 않다면 null를 주도록.
+  // passport는 쿠키나 serialize, deserialize 등의 기능을 다 지원해줌은 물론이고,
+  // user가 담긴 object를 요청(request)에도 올려줄 거임.
   next();
+};
+
+export const onlyPublic = (req, res, next) => {
+  if (req.user) {
+    res.redirect(routes.home);
+  } else {
+    next();
+  }
+};
+
+export const onlyPrivate = (req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect(routes.home);
+  }
 };
 
 export const uploadVideo = multerVideo.single("videoFile");
