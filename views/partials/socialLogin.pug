@@ -4,7 +4,14 @@
             span
                 i.fab.fa-github 
             |Continue with Github
-    button.social-login--facebook
+    button.social-login--google
+        a(href=routes.google)
+            span
+                i.fab.fa-google-plus-g
+            | Continue with Google
+    button.social-login--kakao
         span
-            i.fab.fa-facebook 
-        |Continue with Facebook
+            a(href=routes.kakao)
+                img(src="/static/kakao.png")
+                |&nbsp;Continue with Kakao
+        
