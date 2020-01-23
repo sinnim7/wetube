@@ -1,6 +1,7 @@
 .header {
-  background-color: $red;
+  background-color: #ffffff;
   margin-bottom: 50px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
   .header__wrapper {
     padding: 5px 0px;
     width: 100%;
@@ -11,7 +12,7 @@
     align-items: center;
     .header__column {
       i {
-        color: white;
+        color: #000000;
         font-size: 30px;
       }
       &:nth-child(2) {
@@ -23,7 +24,7 @@
       }
       ul {
         display: flex;
-        color: white;
+        color: 000000;
         font-weight: 600;
         text-transform: uppercase;
         li:not(:last-child) {
@@ -42,7 +43,7 @@
           max-width: none;
           &::placeholder {
             font-weight: 300;
-            color: rgba(0, 0, 0, 0.7);
+            color: #ddd;
           }
         }
       }

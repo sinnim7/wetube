@@ -41,7 +41,7 @@ const addComment = (comment, commentID) => {
   const delBtn = document.createElement("button");
   span.innerHTML = comment;
   delBtn.id = String(commentID);
-  delBtn.innerText = "삭제하기 ❌";
+  delBtn.innerText = "delete";
   delBtn.addEventListener("click", handleClick);
   span.appendChild(delBtn);
   li.appendChild(span);

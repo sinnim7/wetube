@@ -21,6 +21,14 @@ const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 
+// Boards
+
+const BOARDS = "/boards";
+const BOARDUPLOAD = "/boardupload";
+const BOARD_DETAIL = "/:id";
+const EDIT_BOARD = "/:id/edit";
+const DELETE_BOARD = "/:id/delete";
+
 // Github
 
 const GITHUB = "/auth/github";
@@ -42,6 +50,8 @@ const API = "/api";
 const REGISTER_VIEW = "/:id/view";
 const ADD_COMMENT = "/:id/comment";
 const DELETE_COMMENT = "/:id/comment/delete";
+
+// API 2번
 
 const routes = {
   home: HOME,
@@ -80,6 +90,29 @@ const routes = {
       return `/videos/${id}/delete`;
     } else {
       return DELETE_VIDEO;
+    }
+  },
+  boards: BOARDS,
+  boardupload: BOARDUPLOAD,
+  boardDetail: id => {
+    if (id) {
+      return `/boards/${id}`;
+    } else {
+      return BOARD_DETAIL;
+    }
+  },
+  editBoard: id => {
+    if (id) {
+      return `/boards/${id}/edit`;
+    } else {
+      return EDIT_BOARD;
+    }
+  },
+  deleteBoard: id => {
+    if (id) {
+      return `/boards/${id}/delete`;
+    } else {
+      return DELETE_BOARD;
     }
   },
   gitHub: GITHUB,

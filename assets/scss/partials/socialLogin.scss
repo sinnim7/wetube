@@ -15,6 +15,7 @@
     span {
       margin-right: 10px;
       font-size: 20px;
+      text-align: center;
     }
   }
   .social-login--github {
@@ -24,5 +25,16 @@
   .social-login--facebook {
     background-color: #3a5998;
     color: white;
+  }
+  .social-login--kakao {
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    img {
+      width: 25px;
+      height: 22px;
+      border-radius: 10px;
+      margin-top: 0px;
+    }
   }
 }
