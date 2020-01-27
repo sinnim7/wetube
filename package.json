@@ -4,6 +4,9 @@
   "description": "Cloning Youtube with Vanilla and NodeJS",
   "main": "index.js",
   "author": "sinnim7",
+  "engines": {
+    "node": "12.13.1"
+  },
   "dependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.7.4",
