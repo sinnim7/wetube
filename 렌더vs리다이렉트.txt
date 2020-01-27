@@ -1,0 +1,8 @@
+
+res.render('home.pug') renders a template called 'home'
+
+res.redirect("/home") makes the URL of the user change to /home 
+and will execute the homeController.
+
+You use res.redirect for example when the user logs in, 
+you change from /login to /home or whatever.

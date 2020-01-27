@@ -1,0 +1,5 @@
+Files that start with _ will be not turned into CSS. In our case we want reset.scss to be converted into CSS but _variables no.
+
+Sass is a pre processor of CSS
+
+SCSS is how you write sexy CSS and Sass turns it into CSS

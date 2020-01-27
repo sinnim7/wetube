@@ -109,5 +109,8 @@ uploads
 static
 pre
 images
+<<<<<<< HEAD
 build
 .env
+=======
+>>>>>>> 7271598ed17f351dcc1cc130a44808eec92b83a9

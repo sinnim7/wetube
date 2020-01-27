@@ -1,0 +1,5 @@
+css 작업시마다 서버 재실행을 막아두려면
+package.json 가서
+
+"dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore 'scss' ",
+이렇게 하면 됨

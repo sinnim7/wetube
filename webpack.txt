@@ -1,0 +1,72 @@
+# webpack
+webpack은 module bundler인데
+우리가 많은 파일들을 가져와 webpack에게 주면,
+webpack은 그것들을 완전히 호환되는 static 파일들로 변환해서 줌.
+가령, 이 코스에서 우린 지금 ES6  바닐라 자바스크립트를 쓰고 있고, 
+또 Sass라는 것도 쓸 거임. Sass는 섹시한 CSS.
+우리가 모던 자바스크립트를 쓰면 그걸 받은 webpack은 그냥 일반적인 CSS와
+오래되고 노멀한 자바스크립트로 변환해서 브라우저가 알아들을 수 있도록 해줄 거임.
+
+npm install webpack webpack-cli
+=> 하나는(webpack) 파일에서 webpack을 사용하기 위함이고,
+다른 하나(webpack-cli)는 터미널에서 webpack을 쓸 수 있게 해주는 거임.
+설치하면 새로운 파일(webpack.config.js)을 생성해주자.
+
+그담에 package.json으로 이동
+
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node init.js --delay 2",
+    "dev:assets": "webpack"
+  },
+
+이렇게 변경
+
+이제부터는 서버 실행시킬때 npm start 안 쓸 거임.
+이젠 npm run dev:server
+그리고 npm run dev:assets로
+각자 다른 콘솔에서 실행시켜야 함.
+
+누군가 dev:assets라고 치면 webpack을 불러오도록 해놓을 거임.
+그러면 webpack은 자동적으로 webpack.config.js라는 파일을 찾을거임.
+
+기본적인 규칙은 webpack은 exported configuration object를 찾음.
+이 config 파일에서 명심해야 할 건
+server 코드와는 연관시키지 않는다는 점.
+100% 완전 client code임.
+
+webpack은 두 가지를 갖고 있음.
+하나는 entry라고 불리는 것, 다른 하난 output이라는 거임.
+entry는 어디서 왔느냐고 output은 그걸 어디에 넣을 것인가를 의미.
+
+webpack은 module을 만났을 때 몇 가지 규칙(rule)을 따르게 해야 함.
+rules는 하나의 array임. config 라는 object 안에 있는 array.
+"webpack아, 네가 확장자 scss인 파일을 만날 때마다 어떤 loader를 실행해라."
+loader란 건 기본적으로 webpack에게 파일을 처리하는 방법을 알려주는 역할을 함.
+webpack은 아무거소 할 줄 모름. loader를 추가해줘야 비로소 파일 다루는 법을 알게됨.
+
+scss파일을 찾앗을 땐 가장 먼저 그 scss를 css로 바꾸고
+그 css에 헤당하는 텍스트 전체를 취해서
+즉, 그 텍스트를 추출해 css 파일로 저장해야 되는 거임.
+확장자가 scss인 파일을 찾고, scss를 css로 바꾸고,
+전체 텍스트 중 그 css의 텍스트를 추출하고
+그 추출된 css를 분리된 하나의 파일로 만드는 거임.
+
+
+npm install extract-text-webpack-plugin@next
+npm에서 특정 새로운 버전 설치하고 싶으면 @ 기호를 쓰면됨.
+가령 @2.3 이면 2.3버전임
+@next  이렇게 하면 가장 최신버전을 설치해줌.
+
+webpack에선 사실 (loader를 사용할 때) 끝에서부터 시작해 처음으로 진행함.
+
+
+npm install css-loader postcss-loader sass-loader    설치
+
+#postcss 기능.
+npm install autoprefixer
+
+npm install node-sass
+
+npm install babel-loader
+
+npm install @babel/polyfill

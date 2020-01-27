@@ -1,0 +1,18 @@
+MongDB는 Database이고
+Mongoose는 Database와 연결해줌.
+MongDB는 NoSQL Database이고 특징은 규칙이 적고 엄청 유연.
+그리고 많은 Relationship이 필요 없는 일반적인 프로젝트를 진행할 때 좋음.
+채팅에 적합한 Database임. 생성이 매우 빠르고 엄격하지 않아서.
+
+
+# Server / DB
+
+Server has all the logic.
+
+DB has all the data.
+
+They work close from each other but they are not together, 
+the server is the one that searches the database based on the logic 
+and conditions that we give him.
+
+

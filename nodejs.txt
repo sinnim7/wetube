@@ -1,0 +1,6 @@
+# Node.js
+Node.js엔 파일과 디렉토리(경로)를 absolute로 만들어주는 방법이 있음.
+다시말해, 컴퓨터나 서버에서의 전체 경로를 갖게 되는 거.
+/users/nicolas/documents/wetube/assets
+이렇게 전체 경로를 나타내자는 건데, path라는 걸로 할 수 잇어.
+path는 Node.js에 기본으로 깔려 있는 패키지야.
