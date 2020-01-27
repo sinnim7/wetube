@@ -17,3 +17,6 @@ Cloning Youtube with Vanilla and NodeJS
 - [x] BoardUpload
 - [x] Board Detail
 - [x] Edit Board
+
+## Playing:
+<a href="ttps://youtu.be/elF7CG5r1L4">Getting Started</a>
